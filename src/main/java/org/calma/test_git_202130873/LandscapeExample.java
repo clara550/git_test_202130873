@@ -20,7 +20,7 @@ public class LandscapeExample extends Application {
 
         // Dessiner le ciel (coup de pinceau bleu)
         gc.setFill(Color.CYAN);
-        gc.fillRect(0, 0, 800, 400);  // Le ciel occupe la partie supérieure de l'écran
+        gc.fillRect(0, 0, 800, 400);  // Le ciel occupe la partie supérieure de l'écran.
 
         // Dessiner le sol (coup de pinceau vert)
         gc.setFill(Color.GREEN);
@@ -76,11 +76,11 @@ public class LandscapeExample extends Application {
 
         // Yeux du dromadaire (cercles)
         gc.setFill(Color.BLACK);
-        gc.fillOval(x + 110, y - 10, 5, 5);  // Oeil
+        gc.fillOval(x + 110, y - 10, 5, 5);  // Œil
 
         // Queue du dromadaire (ligne courbée)
         gc.setStroke(Color.BROWN);
         gc.setLineWidth(3);
-        gc.strokeLine(x, y + 90, x - 20, y + 110);  // Queue
+        gc.strokeLine(x, y + 30, x - 20, y + 90);  // Queue
     }
 }
