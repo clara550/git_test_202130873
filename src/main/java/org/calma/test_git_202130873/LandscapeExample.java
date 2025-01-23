@@ -35,6 +35,9 @@ public class LandscapeExample extends Application {
         gc.setFill(Color.YELLOW);
         gc.fillOval(600, 50, 100, 100);  // Soleil dans le coin supérieur droit
 
+        // Dessiner le dromadaire
+        drawCamel(gc, 250, 460);
+
         // Ajouter le canevas à la scène
         root.getChildren().add(canvas);
 
@@ -43,5 +46,41 @@ public class LandscapeExample extends Application {
         primaryStage.setTitle("Paysage en JavaFX");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    // Méthode pour dessiner un dromadaire
+    private void drawCamel(GraphicsContext gc, double x, double y) {
+        // Corps du dromadaire (ellipse)
+        gc.setFill(Color.BROWN);
+        gc.fillOval(x, y, 120, 60);  // Corps du dromadaire
+
+        // Tête du dromadaire (cercle)
+        gc.setFill(Color.BROWN);
+        gc.fillOval(x + 100, y - 20, 40, 40);  // Tête
+
+        // Bosse du dromadaire (ovale)
+        gc.setFill(Color.BROWN);
+        gc.fillOval(x + 30, y - 40, 60, 40);  // Bosse
+
+        // Pattes du dromadaire (rectangles)
+        gc.setFill(Color.BROWN);
+        gc.fillRect(x + 30, y + 60, 10, 40);  // Patte avant gauche
+        gc.fillRect(x + 50, y + 60, 10, 40);  // Patte avant droite
+        gc.fillRect(x + 70, y + 60, 10, 40);  // Patte arrière gauche
+        gc.fillRect(x + 90, y + 60, 10, 40);  // Patte arrière droite
+
+        // Cou du dromadaire (ligne courbée)
+        gc.setStroke(Color.BROWN);
+        gc.setLineWidth(5);
+        gc.strokeLine(x + 120, y + 10, x + 140, y - 10);  // Cou
+
+        // Yeux du dromadaire (cercles)
+        gc.setFill(Color.BLACK);
+        gc.fillOval(x + 110, y - 10, 5, 5);  // Oeil
+
+        // Queue du dromadaire (ligne courbée)
+        gc.setStroke(Color.BROWN);
+        gc.setLineWidth(3);
+        gc.strokeLine(x, y + 90, x - 20, y + 110);  // Queue
     }
 }
